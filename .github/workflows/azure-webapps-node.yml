@@ -55,6 +55,9 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
+        npm run test:1 --if-present
+        npm run test:2 --if-present
+        npm run test:3 --if-present
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
