@@ -46,7 +46,11 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         
     - name: Copy dependency lock file
-      run: cp server/package-lock.json ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Change working directory to server
+      run: cd server
+    - name: Copy dependency lock file
+      run: cp package-lock.json ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
 
     - name: npm install, build, and test
       run: |
